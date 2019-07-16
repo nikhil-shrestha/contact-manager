@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TextInputGroup from '../layout/TextInputGroup';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getContact } from '../../actions/contactAction';
+import { getContact, updateContact } from '../../actions/contactAction';
 
 class EditContact extends Component {
   state = {
@@ -56,7 +56,7 @@ class EditContact extends Component {
 
     const { id } = this.props.match.params;
 
-    //// UPDATE CONTACT ////
+    this.props.updateContact(id, updContact);
 
     // Clear State
     this.setState({
@@ -127,5 +127,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getContact }
+  { getContact, updateContact }
 )(EditContact);
