@@ -17,12 +17,12 @@ const Header = props => {
                 <i className="fas fa-home" /> Home
               </Link>
             </li>
-            <li>
-              <Link to="/add-contact" className="nav-link">
+            <li className="nav-item">
+              <Link to="/contact/add" className="nav-link">
                 <i className="fas fa-plus" /> Add
               </Link>
             </li>
-            <li>
+            <li className="nav-item">
               <Link to="/about" className="nav-link">
                 <i className="fas fa-question" /> About
               </Link>
@@ -38,7 +38,7 @@ Header.defaultProps = {
   branding: 'My App'
 };
 
-Header.prototype = {
+Header.propTypes = {
   branding: PropTypes.string.isRequired
 };
 
